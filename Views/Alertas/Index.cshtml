@@ -1,0 +1,24 @@
+﻿@model List<GuardianGrid.AdminPanel.Models.Alerta>
+
+<h2>Alertas Regionais</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Novo Alerta</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Região Afetada</th>
+            <th>Mensagem</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var alerta in Model)
+        {
+            <tr>
+                <td>@alerta.RegiaoAfetada</td>
+                <td>@alerta.Mensagem</td>
+                <td>@alerta.CriadoEm.ToString("dd/MM/yyyy HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

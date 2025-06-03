@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Zonas Críticas";
+    var zonas = ViewBag.Zonas as IEnumerable<dynamic>;
+}
+
+<h2>Zonas Críticas (últimos 7 dias)</h2>
+
+@if (zonas == null || !zonas.Any())
+{
+    <div class="alert alert-success">Nenhuma zona crítica identificada no período.</div>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Região</th>
+                <th>Quantidade de Eventos</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var zona in zonas)
+            {
+                <tr>
+                    <td>@zona.Regiao</td>
+                    <td>@zona.Quantidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

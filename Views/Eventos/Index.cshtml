@@ -1,0 +1,29 @@
+﻿@model List<GuardianGrid.AdminPanel.Models.Evento>
+
+<h2>Eventos Registrados</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Novo Evento</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Região</th>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Zona Crítica</th>
+        </tr>
+    </thead>
+    <tbody>
+            <a class="btn btn-outline-secondary mb-3" asp-action="ExportarCSV">
+                📥 Exportar CSV
+            </a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Regiao</td>
+                <td>@item.DataOcorrencia.ToString("dd/MM/yyyy")</td>
+                <td>@item.Descricao</td>
+                <td>@(item.ZonaCritica ? "Sim" : "Não")</td>
+            </tr>
+        }
+    </tbody>
+</table>

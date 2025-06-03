@@ -1,0 +1,23 @@
+﻿@model GuardianGrid.AdminPanel.Models.Alerta
+
+<h2>Emitir Novo Alerta</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="RegiaoAfetada"></label>
+        <input asp-for="RegiaoAfetada" class="form-control" />
+        <span asp-validation-for="RegiaoAfetada" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Mensagem"></label>
+        <textarea asp-for="Mensagem" class="form-control"></textarea>
+        <span asp-validation-for="Mensagem" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

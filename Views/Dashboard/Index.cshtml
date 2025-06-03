@@ -1,0 +1,33 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Estatísticas de Eventos";
+    var labels = ViewBag.Labels as string[];
+    var values = ViewBag.Values as int[];
+}
+
+<h2>Estatísticas por Região</h2>
+
+<canvas id="graficoEventos" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('graficoEventos').getContext('2d');
+    const grafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(JsonConvert.SerializeObject(ViewBag.Labels)),
+            datasets: [{
+                label: 'Eventos por Região',
+                data: @Html.Raw(JsonConvert.SerializeObject(ViewBag.Values)),
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
