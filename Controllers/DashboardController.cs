@@ -43,12 +43,7 @@ namespace GuardianGrid.AdminPanel.Controllers
 
         public async Task<IActionResult> ZonasCriticas()
         {
-            var diasLimite = DateTime.Now.AddDays(-7);
-
-            var eventosRecentes = await _context.Eventos
-                .Where(e => e.DataOcorrencia >= diasLimite)
-                .ToListAsync();
-
+            var eventosRecentes = await _context.Eventos.ToListAsync();
             var zonasCriticas = eventosRecentes
                 .GroupBy(e => e.Regiao)
                 .Select(g => new
@@ -61,7 +56,6 @@ namespace GuardianGrid.AdminPanel.Controllers
                 .ToList();
 
             ViewBag.Zonas = zonasCriticas;
-
             return View();
         }
     }

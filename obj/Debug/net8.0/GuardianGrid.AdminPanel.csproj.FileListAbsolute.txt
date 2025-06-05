@@ -164,3 +164,4 @@ C:\Users\julio\OneDrive\Área de Trabalho\Faculdade\Csharp\GuardianGrid.AdminPan
 C:\Users\julio\OneDrive\Área de Trabalho\Faculdade\Csharp\GuardianGrid.AdminPanel\GuardianGrid.AdminPanel\obj\Debug\net8.0\GuardianGrid.AdminPanel.genruntimeconfig.cache
 C:\Users\julio\OneDrive\Área de Trabalho\Faculdade\Csharp\GuardianGrid.AdminPanel\GuardianGrid.AdminPanel\obj\Debug\net8.0\ref\GuardianGrid.AdminPanel.dll
 C:\Users\julio\OneDrive\Área de Trabalho\Faculdade\Csharp\GuardianGrid.AdminPanel\GuardianGrid.AdminPanel\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\julio\OneDrive\Área de Trabalho\Faculdade\Csharp\GuardianGrid.AdminPanel\GuardianGrid.AdminPanel\obj\Debug\net8.0\GuardianGrid.AdminPanel.sourcelink.json
